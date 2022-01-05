@@ -41,7 +41,7 @@
     margin-bottom: 1em;
   }
   .react-calendar__navigation button {
-    min-width: 44px;
+    min-width: 43px;
     background: none;
   }
   .react-calendar__navigation button:enabled:hover,
