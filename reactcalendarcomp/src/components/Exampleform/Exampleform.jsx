@@ -7,22 +7,19 @@ function Exampleform() {
     <div className='form-dialog'>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Label>E-postaddress</Form.Label>
+          <Form.Control type="email" placeholder="Ange din e-postadress ..." />
           <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
+            Denna e-postadress kommer att användas för att vi ska kunna svara på din förfrågan.
           </Form.Text>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
+       
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
+          <Form.Check type="checkbox" label="En annan tid den dagen om det inte går" />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Skicka förfrågan
         </Button>
       </Form>
     </div>
