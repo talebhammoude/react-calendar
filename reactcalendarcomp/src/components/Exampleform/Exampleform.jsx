@@ -18,6 +18,7 @@ function Exampleform() {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="En annan tid den dagen om det inte går" />
         </Form.Group>
+        
         <Button variant="primary" type="submit">
           Skicka förfrågan
         </Button>
