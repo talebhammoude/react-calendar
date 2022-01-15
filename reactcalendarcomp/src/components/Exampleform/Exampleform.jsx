@@ -20,7 +20,7 @@ function Exampleform() {
         </Form.Group>
         
         <Button variant="primary" type="submit">
-          Skicka förfrågan
+                  Skicka förfrågan
         </Button>
       </Form>
     </div>
