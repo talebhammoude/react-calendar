@@ -1,6 +1,6 @@
 import './App.css';
 import CalendarComp from './components/CalendarComp/CalendarComp';
-import Exampleform from './components/Exampleform/Exampleform';
+
 
 function App() {
 
@@ -8,9 +8,6 @@ function App() {
     <div>
      
      <CalendarComp/>
-
-     
-     <Exampleform />
       
     </div>
   );

@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form , Button} from "react-bootstrap";
 import "./Exampleform.css";
 
-function Exampleform() {
+function Exampleform(props) {
   return (
     <div>
 
