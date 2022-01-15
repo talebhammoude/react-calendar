@@ -1,6 +1,6 @@
 .form-dialog {
-    width: 800px;
-    max-width: 100%;
+    width: 60%;
+    max-width: 910px;
     background: white;
     border: 0px solid #a0a096;
     border-radius: 18px;
@@ -8,14 +8,23 @@
     line-height: 1.125em;
     box-shadow: 2px 3px 14px 1px #a0a096;
     padding: 25px;
-    margin: auto;
+    margin-left: 20%;
     position: fixed;
     top: 25vh;
-    left: 10%;
-    width: 80%;
     z-index: 100;
-    overflow: hidden;
+    overflow: auto;
 }
+
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+  }
 
 
 

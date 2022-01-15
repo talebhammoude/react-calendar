@@ -4,25 +4,29 @@ import "./Exampleform.css";
 
 function Exampleform() {
   return (
-    <div className='form-dialog'>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>E-postaddress</Form.Label>
-          <Form.Control type="email" placeholder="Ange din e-postadress ..." />
-          <Form.Text className="text-muted">
-            Denna e-postadress kommer att användas för att vi ska kunna svara på din förfrågan.
-          </Form.Text>
-        </Form.Group>
+    <div>
 
-       
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="En annan tid den dagen om det inte går" />
-        </Form.Group>
+      <div className='backdrop'/>
+      <div className='form-dialog'>
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>E-postaddress</Form.Label>
+            <Form.Control type="email" placeholder="Ange din e-postadress ..." />
+            <Form.Text className="text-muted">
+              Denna e-postadress kommer att användas för att vi ska kunna svara på din förfrågan.
+            </Form.Text>
+          </Form.Group>
+
         
-        <Button variant="primary" type="submit">
-                  Skicka förfrågan
-        </Button>
-      </Form>
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="En annan tid den dagen om det inte går" />
+          </Form.Group>
+          
+          <Button variant="primary" type="submit">
+                    Skicka förfrågan
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 }
