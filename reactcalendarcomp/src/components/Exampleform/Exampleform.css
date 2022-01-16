@@ -10,7 +10,7 @@
     padding: 25px;
     margin-left: 20%;
     position: fixed;
-    top: 25vh;
+    top: 9vh;
     z-index: 100;
     overflow: auto;
 }
@@ -49,3 +49,4 @@
     background-color: #cc8d91;
     border-color: #cc8d91;
 }
+

@@ -1,40 +1,94 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Form , Button} from "react-bootstrap";
+import {Form , Button, Row, Col} from "react-bootstrap";
 import "./Exampleform.css";
+import React, { useState } from 'react';
 
 function Exampleform(props) {
 
+  const [validated, setValidated] = useState(false);
 
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
 
   return (
     <div>
 
-      <div className='backdrop' onClick={props.cancelForm}/>
+      <div className='backdrop'/>
       <div className='form-dialog'>
-        <Form>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>E-postaddress</Form.Label>
-            <Form.Control type="email" placeholder="Ange din e-postadress ..." />
-            <Form.Text className="text-muted">
-              Denna e-postadress kommer att användas för att vi ska kunna svara på din förfrågan.
-            </Form.Text>
-          </Form.Group>
+      <Form  validated={validated} onSubmit={handleSubmit}>
+      <Row className="mb-4">
+        <Form.Group as={Col} md="3" controlId="validationCustom01">
+          <Form.Label>Förnamn</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            placeholder="..."
+            defaultValue=""
+          />
+          <Form.Control.Feedback></Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="3" controlId="validationCustom02">
+          <Form.Label>Efternamn</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            placeholder="..."
+            defaultValue=""
+          />
+          <Form.Control.Feedback></Form.Control.Feedback>
+        </Form.Group>
 
+        <Form.Group as={Col} md="6" >
+          <Form.Label>E-post</Form.Label>
+          <Form.Control type="email" placeholder="namn@exempel.com" required />
+          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+        </Form.Group>
+       
+      </Row>
+      <Row className="mb-3">
+        <Form.Group as={Col} md="6" controlId="validationCustom03">
+          <Form.Label>Önskad datum</Form.Label>
+          <Form.Control type="date" placeholder="..." required value={props.dayValue} disabled />
+          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="6" controlId="validationCustom04">
+          <Form.Label>Välj önskad tid</Form.Label>
+          <Form.Control type="time" placeholder="Tid" required />
+          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+        </Form.Group>
         
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="En annan tid den dagen om det inte går" />
-          </Form.Group>
-          
-          <Button variant="primary" type="submit">
-                    Skicka förfrågan
-          </Button>
+      </Row>
+      <Form.Group className="mb-3">
+        <Form.Check
+        
+          // required="true"
+          label="Okej med en annan tillgänglig tid denna dag"
+          // feedback=""
+          // feedbackType="invalid"
+        />
+      </Form.Group>
 
-          <Button variant="primary" onClick={props.cancelForm}> 
-                    Avbryt
-          </Button>
 
+      <Row className="mb-2">
+        <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Beskriv ditt fall</Form.Label>
+        <Form.Control as="textarea" rows={2} />
+        </Form.Group>
+      </Row>
 
-        </Form>
+      <Button className='btn-primary' type="submit">Skicka iväg förfrågan</Button>
+      <Button className='btn-primary' onClick={props.cancelForm}>Avbryt</Button>
+
+    
+
+    </Form>
       </div>
     </div>
   );

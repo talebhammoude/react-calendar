@@ -11,6 +11,7 @@ function CalendarComp() {
 
     const openForm = () => {
       setFormState("open");
+      
     }
 
 
@@ -24,7 +25,7 @@ function CalendarComp() {
       <div>
         <Calendar onChange={onChange} onClickDay={openForm} value={value}/>
 
-        {formState && <Exampleform dayValue={value} cancelForm={cancelFormFunc}/>}
+        {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}/>}
 
       </div>
     );
