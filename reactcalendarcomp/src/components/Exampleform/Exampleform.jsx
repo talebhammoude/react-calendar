@@ -1,28 +1,28 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form , Button, Row, Col} from "react-bootstrap";
 import "./Exampleform.css";
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
 function Exampleform(props) {
 
-  const [validated, setValidated] = useState(false);
+  // const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+  // const handleSubmit = (event) => {
+  //   const form = event.currentTarget;
+  //   if (form.checkValidity() === false) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
 
-    setValidated(true);
-  };
+  //   setValidated(true);
+  // };
 
   return (
     <div>
 
       <div className='backdrop'/>
       <div className='form-dialog'>
-      <Form   validated={validated} name="contact v1" onSubmit="submit"  method="POST" data-netlify="true">
+      <Form    name="contact v1" onSubmit="submit"  method="POST" data-netlify="true">
 
       <Row className="mb-4">
         <h2>Skicka en förfrågan</h2>
