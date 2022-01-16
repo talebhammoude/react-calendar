@@ -22,7 +22,7 @@ function Exampleform(props) {
 
       <div className='backdrop'/>
       <div className='form-dialog'>
-      <Form   name="contact v1" onSubmit="submit"  method="POST" data-netlify="true">
+      <Form   name="contact v1" onSubmit="submit"  method="post" data-netlify="true">
         <input type="hidden" name="form-name" value="contact v1" />
 
       <Row className="mb-4">
