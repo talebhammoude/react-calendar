@@ -13,12 +13,18 @@ function CalendarComp() {
       setFormState("open");
     }
 
+
+    const cancelFormFunc = () => {
+      setFormState(null);
+    }
+
+
   
     return (
       <div>
         <Calendar onChange={onChange} onClickDay={openForm} value={value}/>
 
-        {formState && <Exampleform dayValue={value}/>}
+        {formState && <Exampleform dayValue={value} cancelForm={cancelFormFunc}/>}
 
       </div>
     );

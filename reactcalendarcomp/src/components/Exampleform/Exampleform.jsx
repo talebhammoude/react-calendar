@@ -3,10 +3,13 @@ import {Form , Button} from "react-bootstrap";
 import "./Exampleform.css";
 
 function Exampleform(props) {
+
+
+
   return (
     <div>
 
-      <div className='backdrop'/>
+      <div className='backdrop' onClick={props.cancelForm}/>
       <div className='form-dialog'>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -25,6 +28,12 @@ function Exampleform(props) {
           <Button variant="primary" type="submit">
                     Skicka förfrågan
           </Button>
+
+          <Button variant="primary" onClick={props.cancelForm}> 
+                    Avbryt
+          </Button>
+
+
         </Form>
       </div>
     </div>

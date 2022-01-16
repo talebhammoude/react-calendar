@@ -32,6 +32,9 @@
     color: #fff;
     background-color: #cc8d91;
     border-color: #cc8d91;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 .btn-primary:hover {
