@@ -39,7 +39,7 @@ function Exampleform(props) {
             type="text"
             placeholder="..."
             defaultValue=""
-            name="surname"
+            name="Förnamn"
           />
           <Form.Control.Feedback></Form.Control.Feedback>
         </Form.Group>
