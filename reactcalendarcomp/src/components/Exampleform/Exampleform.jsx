@@ -22,8 +22,8 @@ function Exampleform(props) {
 
       <div className='backdrop'/>
       <div className='form-dialog'>
-      <Form   name="contact" onSubmit="submit"  method="post" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
+      <Form   name="contact" method="post">
+      <input type="hidden" name="form-name" value="contact" />
 
       <Row className="mb-4">
         <h2>Skicka en förfrågan</h2>
@@ -50,14 +50,14 @@ function Exampleform(props) {
             type="text"
             placeholder="..."
             defaultValue=""
-            name="aftername"
+            
           />
           <Form.Control.Feedback></Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group as={Col} md="6" >
           <Form.Label>E-post</Form.Label>
-          <Form.Control type="email" placeholder="namn@exempel.com" required name="email" />
+          <Form.Control type="email" placeholder="namn@exempel.com" required />
           <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
         </Form.Group>
        
@@ -74,7 +74,6 @@ function Exampleform(props) {
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>Välj önskad tid</Form.Label>
-          <Form.Control  name="time"/>
           <Form.Select>
             <option value="t-1">12:00 - 13:00</option>
             <option value="t-2">13:10 - 14:10</option>
@@ -92,7 +91,7 @@ function Exampleform(props) {
       <Row className="mb-2">
         <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Beskriv ditt fall</Form.Label>
-        <Form.Control as="textarea" name="message" rows={2} />
+        <Form.Control as="textarea" rows={2} />
         </Form.Group>
       </Row>
 
