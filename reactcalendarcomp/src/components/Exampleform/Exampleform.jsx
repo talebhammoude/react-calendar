@@ -22,7 +22,7 @@ function Exampleform(props) {
 
       <div className='backdrop'/>
       <div className='form-dialog'>
-      <Form  validated={validated} onSubmit={handleSubmit}>
+      <Form   validated={validated} onSubmit={handleSubmit}  name="contact" method="POST" data-netlify="true">
 
       <Row className="mb-4">
         <h2>Skicka en förfrågan</h2>
