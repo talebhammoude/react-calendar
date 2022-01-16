@@ -23,6 +23,13 @@ function Exampleform(props) {
       <div className='backdrop'/>
       <div className='form-dialog'>
       <Form  validated={validated} onSubmit={handleSubmit}>
+
+      <Row className="mb-4">
+        <h2>Skicka en förfrågan</h2>
+      </Row>
+
+      <Row className="mb-4"></Row>
+
       <Row className="mb-4">
         <Form.Group as={Col} md="3" controlId="validationCustom01">
           <Form.Label>Förnamn</Form.Label>
@@ -52,6 +59,10 @@ function Exampleform(props) {
         </Form.Group>
        
       </Row>
+
+      <Row className="mb-4"></Row>
+
+
       <Row className="mb-3">
         <Form.Group as={Col} md="6" controlId="validationCustom03">
           <Form.Label>Önskad datum</Form.Label>
@@ -60,11 +71,29 @@ function Exampleform(props) {
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>Välj önskad tid</Form.Label>
-          <Form.Control type="time" placeholder="Tid" required />
-          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+          <Form.Select>
+            <option value="t-1">12:00 - 13:00</option>
+            <option value="t-2">13:10 - 14:10</option>
+            <option value="t-3">14:20 - 15:20</option>
+            <option value="t-4">15:30 - 16:30</option>
+          </Form.Select>
         </Form.Group>
         
       </Row>
+
+
+      <Row className="mb-4"></Row>
+
+
+      <Row className="mb-2">
+        <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Beskriv ditt fall</Form.Label>
+        <Form.Control as="textarea" rows={2} />
+        </Form.Group>
+      </Row>
+
+
+      <Row className="mb-2">
       <Form.Group className="mb-3">
         <Form.Check
         
@@ -74,14 +103,8 @@ function Exampleform(props) {
           // feedbackType="invalid"
         />
       </Form.Group>
-
-
-      <Row className="mb-2">
-        <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Beskriv ditt fall</Form.Label>
-        <Form.Control as="textarea" rows={2} />
-        </Form.Group>
       </Row>
+
 
       <Button className='btn-primary' type="submit">Skicka iväg förfrågan</Button>
       <Button className='btn-primary' onClick={props.cancelForm}>Avbryt</Button>
