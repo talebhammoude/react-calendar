@@ -70,7 +70,7 @@ function Exampleform(props) {
       <Row className="mb-3">
         <Form.Group as={Col} md="6" controlId="validationCustom03">
           <Form.Label>Önskad datum</Form.Label>
-          <Form.Control type="text" placeholder="..." required value={props.dayValue}  name="Datum:"/>
+          <Form.Control disabled type="text" placeholder="..." required value={props.dayValue}  name="Datum:"/>
           <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
