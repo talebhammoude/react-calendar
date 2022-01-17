@@ -91,7 +91,7 @@ function Exampleform(props) {
       <Row className="mb-2">
         <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1" >
         <Form.Label>Beskriv ditt fall</Form.Label>
-        <Form.Control as="textarea" rows={2} name="Beskrivning:" />
+        <Form.Control as="textarea" rows={2} name="Beskrivning:"  required/>
         </Form.Group>
       </Row>
 
