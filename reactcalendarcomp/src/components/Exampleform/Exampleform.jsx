@@ -69,8 +69,8 @@ function Exampleform(props) {
 
       <Row className="mb-3">
         <Form.Group as={Col} md="6" >
-          <Form.Label>Önskad datum</Form.Label>
-          <Form.Control type="text"  required value={props.dayValue}  name="Datum:" disabled/>
+          <Form.Label >Önskad datum</Form.Label>
+          <Form.Control  type="text"  required value={props.dayValue}  name="Datum:"/>
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>Välj önskad tid</Form.Label>
