@@ -76,10 +76,10 @@ function Exampleform(props) {
         <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>Välj önskad tid</Form.Label>
           <Form.Select name="Tid:">
-            <option value="t-1">12:00 - 13:00</option>
-            <option value="t-2">13:10 - 14:10</option>
-            <option value="t-3">14:20 - 15:20</option>
-            <option value="t-4">15:30 - 16:30</option>
+            <option value="12:00 - 13:00">12:00 - 13:00</option>
+            <option value="13:10 - 14:10">13:10 - 14:10</option>
+            <option value="14:20 - 15:20">14:20 - 15:20</option>
+            <option value="15:30 - 16:30">15:30 - 16:30</option>
           </Form.Select>
         </Form.Group>
         
@@ -90,9 +90,9 @@ function Exampleform(props) {
 
 
       <Row className="mb-2">
-        <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1" name="Beskrivning:">
+        <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1" >
         <Form.Label>Beskriv ditt fall</Form.Label>
-        <Form.Control as="textarea" rows={2} />
+        <Form.Control as="textarea" rows={2} name="Beskrivning:" />
         </Form.Group>
       </Row>
 
