@@ -39,7 +39,7 @@ function Exampleform(props) {
             type="text"
             placeholder="..."
             defaultValue=""
-            name="Förnamn"
+            name="Förnamn:"
           />
           <Form.Control.Feedback></Form.Control.Feedback>
         </Form.Group>
@@ -50,6 +50,7 @@ function Exampleform(props) {
             type="text"
             placeholder="..."
             defaultValue=""
+            name="Efternamn:"
             
           />
           <Form.Control.Feedback></Form.Control.Feedback>
@@ -57,7 +58,7 @@ function Exampleform(props) {
 
         <Form.Group as={Col} md="6" >
           <Form.Label>E-post</Form.Label>
-          <Form.Control type="email" placeholder="namn@exempel.com" required />
+          <Form.Control type="email" placeholder="namn@exempel.com" required name="E-post:"/>
           <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
         </Form.Group>
        
