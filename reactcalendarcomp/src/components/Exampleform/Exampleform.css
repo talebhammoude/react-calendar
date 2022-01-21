@@ -12,8 +12,19 @@
     position: fixed;
     top: 9vh;
     z-index: 100;
-    overflow: auto;
+    
 }
+
+
+@media screen and (max-width: 770px) {
+    .form-dialog {
+      width: 96%;
+      height: 730px;
+      top: 1vh;
+      margin-left: 2%;
+      overflow-y: scroll;
+    }
+  }
 
 
 .backdrop {
