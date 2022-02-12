@@ -20,10 +20,12 @@ function CalendarComp() {
     }
 
 
+
+
   
     return (
       <div>
-        <Calendar onChange={onChange} onClickDay={openForm} value={value}/>
+        <Calendar onChange={onChange} onClickDay={openForm} minDate={new Date()}  value={value}/>
 
         {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}/>}
 
