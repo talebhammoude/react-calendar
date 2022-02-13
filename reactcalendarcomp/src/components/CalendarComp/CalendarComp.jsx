@@ -31,11 +31,8 @@ const db = getFirestore();
 
 
 
-const handleSubmit = (event) => {
-  event.preventDefault();
 
-
-  async function addToDb() {
+async function addToDb() {
 
     try {
       const docRef = await addDoc(collection(db, "bookedTimes"), {
@@ -52,28 +49,6 @@ const handleSubmit = (event) => {
       console.error("Error adding document: ", e);
     }
 }
-
-console.log(addToDb);
-  
-}
-
-// async function addToDb() {
-
-//     try {
-//       const docRef = await addDoc(collection(db, "bookedTimes"), {
-//         firstname: document.querySelector("input[name='Förnamn:']").value,
-//         lastname: document.querySelector("input[name='Efternamn:']").value,
-//         email: document.querySelector("input[name='E-post:']").value,
-//         date: document.querySelector("input[name='Datum:']").value,
-//         time: document.querySelector("#validationCustom04").value,
-//         description: document.querySelector("input[name='Beskrivning:']").value,
-        
-//       });
-//       console.log("Document written with ID: ", docRef.id);
-//     } catch (e) {
-//       console.error("Error adding document: ", e);
-//     }
-// }
 
 
 
@@ -141,7 +116,7 @@ function CalendarComp() {
       <div>
         <Calendar onChange={onChange} onClickDay={openForm} minDate={new Date()}  value={value} />
 
-        {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={handleSubmit} />}
+        {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={addToDb} />}
 
       </div>
     );
