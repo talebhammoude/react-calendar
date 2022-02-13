@@ -24,6 +24,8 @@ const firebaseApp = initializeApp({
   projectId: "stivo-9ebcd"
 });
 
+console.log(firebaseApp);
+
 
 const db = getFirestore();
 
