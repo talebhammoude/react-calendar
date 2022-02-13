@@ -120,10 +120,10 @@ function Exampleform(props) {
       </Form.Group>
       </Row>
 
-      <Form.Group onSubmit={props.addBooking}>
-      <Button className='btn-primary' type="submit"  >Skicka iväg förfrågan</Button>
+      
+      <Button className='btn-primary' type="submit" onClick={props.addBooking} >Skicka iväg förfrågan</Button>
       <Button className='btn-primary' onClick={props.cancelForm}>Avbryt</Button>
-      </Form.Group>
+     
 
     
 
