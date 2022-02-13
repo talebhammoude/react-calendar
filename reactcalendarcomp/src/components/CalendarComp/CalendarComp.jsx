@@ -41,7 +41,7 @@ async function addToDb() {
         email: document.querySelector("input[name='E-post:']").value,
         date: document.querySelector("input[name='Datum:']").value,
         time: document.querySelector("#validationCustom04").value,
-        description: document.querySelector("input[name='Beskrivning:']").value,
+        description: document.querySelector("#description1").value,
         
       });
       console.log("Document written with ID: ", docRef.id);

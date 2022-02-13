@@ -30,7 +30,8 @@ function Exampleform(props) {
     <div >
 
       <div className='backdrop' />
-      <div className='form-dialog' >
+      <div className='form-dialog'>
+
       <Form  name="contact" method="post"   >
       <input type="hidden" name="form-name" value="contact"  />
 
@@ -101,7 +102,7 @@ function Exampleform(props) {
       <Row className="mb-2">
         <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1" >
         <Form.Label>Beskriv ditt fall</Form.Label>
-        <Form.Control as="textarea" rows={2} name="Beskrivning:"  required/>
+        <Form.Control id="description1" as="textarea" rows={2} name="Beskrivning:"  required/>
         </Form.Group>
       </Row>
 
@@ -121,7 +122,7 @@ function Exampleform(props) {
       </Row> */}
 
       
-      <Button className='btn-primary'   type="submit"  onClick={props.addBooking} >Skicka iväg förfrågan</Button>
+      <Button className='btn-primary'   type="submit" onClick={props.addBooking} >Skicka iväg förfrågan</Button>
       <Button className='btn-primary' onClick={props.cancelForm}>Avbryt</Button>
      
 
