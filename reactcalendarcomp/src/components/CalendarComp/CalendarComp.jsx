@@ -41,7 +41,7 @@ async function addToDb() {
         date: document.querySelector("input[name='Datum:']").value,
         time: document.querySelector("#validationCustom04").value,
         description: document.querySelector("input[name='Beskrivning:']").value,
-        anotherTimeCheck: document.querySelector("input[name='Okej med annan tid:']").value
+        
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {

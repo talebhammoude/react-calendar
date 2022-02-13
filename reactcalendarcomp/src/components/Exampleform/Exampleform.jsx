@@ -106,7 +106,7 @@ function Exampleform(props) {
       </Row>
 
 
-      <Row className="mb-2">
+      {/* <Row className="mb-2">
       <Form.Group className="mb-3">
         <Form.Check
         
@@ -118,7 +118,7 @@ function Exampleform(props) {
           value=""
         />
       </Form.Group>
-      </Row>
+      </Row> */}
 
       
       <Button className='btn-primary' onClick={props.addBooking}  type="submit"  >Skicka iväg förfrågan</Button>
