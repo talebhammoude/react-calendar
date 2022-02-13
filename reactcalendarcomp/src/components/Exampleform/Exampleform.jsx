@@ -31,7 +31,7 @@ function Exampleform(props) {
 
       <div className='backdrop' />
       <div className='form-dialog' >
-      <Form  name="contact" method="post" onSubmit={props.addBooking}  >
+      <Form  name="contact" method="post"   >
       <input type="hidden" name="form-name" value="contact"  />
 
       <Row className="mb-4">
@@ -121,7 +121,7 @@ function Exampleform(props) {
       </Row> */}
 
       
-      <Button className='btn-primary'   type="submit"   >Skicka iväg förfrågan</Button>
+      <Button className='btn-primary'   type="submit"  onSubmit={props.addBooking} >Skicka iväg förfrågan</Button>
       <Button className='btn-primary' onClick={props.cancelForm}>Avbryt</Button>
      
 
