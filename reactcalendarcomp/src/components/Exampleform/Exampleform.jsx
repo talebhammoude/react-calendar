@@ -31,7 +31,7 @@ function Exampleform(props) {
 
       <div className='backdrop' />
       <div className='form-dialog' >
-      <Form onSubmit={props.addBooking}  name="contact" method="post"   >
+      <Form  name="contact" method="post"   >
       <input type="hidden" name="form-name" value="contact"  />
 
       <Row className="mb-4">
@@ -120,9 +120,10 @@ function Exampleform(props) {
       </Form.Group>
       </Row>
 
-
+      <Form.Group onSubmit={props.addBooking}>
       <Button className='btn-primary' type="submit"  >Skicka iväg förfrågan</Button>
       <Button className='btn-primary' onClick={props.cancelForm}>Avbryt</Button>
+      </Form.Group>
 
     
 
