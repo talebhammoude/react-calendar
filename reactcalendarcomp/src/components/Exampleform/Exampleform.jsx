@@ -3,7 +3,12 @@ import {Form , Button, Row, Col} from "react-bootstrap";
 import "./Exampleform.css";
 // import React, { useState } from 'react';
 
+
+
+
 function Exampleform(props) {
+  
+  
 
   // const [validated, setValidated] = useState(false);
 
@@ -17,13 +22,17 @@ function Exampleform(props) {
   //   setValidated(true);
   // };
 
-  return (
-    <div>
 
-      <div className='backdrop'/>
-      <div className='form-dialog'>
-      <Form   name="contact" method="post">
-      <input type="hidden" name="form-name" value="contact" />
+  
+
+
+  return (
+    <div >
+
+      <div className='backdrop' />
+      <div className='form-dialog' >
+      <Form   name="contact" method="post"   >
+      <input type="hidden" name="form-name" value="contact"  />
 
       <Row className="mb-4">
         <h2>Skicka en förfrågan</h2>
@@ -70,15 +79,16 @@ function Exampleform(props) {
       <Row className="mb-3">
         <Form.Group as={Col} md="6" >
           <Form.Label >Önskad datum</Form.Label>
-          <Form.Control  type="text"  required value={props.dayValue} readOnly  name="Datum:"/>
+          <Form.Control  type="text"   required value={props.dayValue} readOnly  name="Datum:"  />
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>Välj önskad tid</Form.Label>
-          <Form.Select name="Tid:">
-            <option value="12:00 - 13:00">12:00 - 13:00</option>
-            <option value="13:10 - 14:10">13:10 - 14:10</option>
-            <option value="14:20 - 15:20">14:20 - 15:20</option>
-            <option value="15:30 - 16:30">15:30 - 16:30</option>
+          <Form.Select name="Tid:" >
+            <option id="no-options" value="no-value"></option>
+            <option id="12:00 - 13:00" value="12:00 - 13:00">12:00 - 13:00</option>
+            <option id="13:10 - 14:10" value="13:10 - 14:10">13:10 - 14:10</option>
+            <option id="14:20 - 15:20" value="14:20 - 15:20">14:20 - 15:20</option>
+            <option id="15:30 - 16:30" value="15:30 - 16:30">15:30 - 16:30</option>
           </Form.Select>
         </Form.Group>
         
@@ -111,7 +121,7 @@ function Exampleform(props) {
       </Row>
 
 
-      <Button className='btn-primary' type="submit">Skicka iväg förfrågan</Button>
+      <Button className='btn-primary' type="submit"  onClick={props.addBooking}>Skicka iväg förfrågan</Button>
       <Button className='btn-primary' onClick={props.cancelForm}>Avbryt</Button>
 
     
