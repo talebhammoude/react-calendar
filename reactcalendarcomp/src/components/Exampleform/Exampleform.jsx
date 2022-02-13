@@ -115,13 +115,13 @@ function Exampleform(props) {
           // feedback=""
           // feedbackType="invalid"
           name="Okej med annan tid:"
-          value="Ja"
+          value=""
         />
       </Form.Group>
       </Row>
 
       
-      <Button className='btn-primary' onClick={props.addBooking} type="submit"  >Skicka iväg förfrågan</Button>
+      <Button className='btn-primary' onClick={props.addBooking}  type="submit"  >Skicka iväg förfrågan</Button>
       <Button className='btn-primary' onClick={props.cancelForm}>Avbryt</Button>
      
 
