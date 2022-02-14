@@ -34,7 +34,7 @@ function Exampleform(props) {
 
 
       
-      <Form  name="contact" method="post"   >
+      <Form  name="contact" method="post" onSubmit={props.addBooking}  >
       <input type="hidden" name="form-name" value="contact"  />
 
       <Row className="mb-4">
@@ -124,7 +124,7 @@ function Exampleform(props) {
       </Row> */}
 
       
-      <Button  className='btn-primary' onClick={props.addBooking}  type="submit"  >Skicka iväg förfrågan</Button>
+      <Button  className='btn-primary'   type="submit"  >Skicka iväg förfrågan</Button>
       <Button className='btn-primary' onClick={props.cancelForm}>Avbryt</Button>
      
 
