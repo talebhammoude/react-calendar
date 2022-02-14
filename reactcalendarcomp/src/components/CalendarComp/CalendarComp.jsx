@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import Exampleform from '../Exampleform/Exampleform';
 import './CalendarComp.css';
@@ -109,6 +109,22 @@ function CalendarComp() {
     }
 
 
+
+    useEffect(() => {
+      checkIfDateFull();
+    });
+
+
+    const checkIfDateFull = async() => {
+      const querySnapshot = await getDocs(collection(db, "bookedTimes"));
+      querySnapshot.forEach((doc) => {
+    
+      //const dataFromDbArray = Object.values(doc.data());
+      
+      console.log(doc.data().date);
+      
+      });
+    }
     
 
   
