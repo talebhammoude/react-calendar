@@ -158,7 +158,7 @@ function CalendarComp() {
   
     return (
       <div>
-        <Calendar onChange={onChange} onClickDay={openForm} minDate={new Date()}  value={value} />
+        <Calendar onChange={onChange} onClickDay={openForm} minDate={new Date()}  value={value}  tileDisabled={({activeStartDate, date, view }) => date.getDay() === 0}/>
 
         {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={addToDb} />}
 
