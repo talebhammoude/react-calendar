@@ -121,9 +121,9 @@ function CalendarComp() {
     
       //const dataFromDbArray = Object.values(doc.data());
       
-      console.log(doc.data().date);
-      
+
       });
+
     }
     
 
