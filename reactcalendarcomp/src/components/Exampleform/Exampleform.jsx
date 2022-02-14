@@ -89,7 +89,7 @@ function Exampleform(props) {
 
 
       <Row className="mb-2">
-        <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1" >
+        <Form.Group className="mb-1"  >
         <Form.Label>Beskriv ditt fall</Form.Label>
         <Form.Control id="description1" as="textarea" rows={2} name="Beskrivning:"  required/>
         </Form.Group>
@@ -111,7 +111,7 @@ function Exampleform(props) {
       </Row> */}
 
       
-      <Button  className='btn-primary'   type="submit"  >Skicka iväg förfrågan</Button>
+      <Button  className='btn-primary'   type="submit" onClick={props.addBooking} >Skicka iväg förfrågan</Button>
       <Button className='btn-primary' onClick={props.cancelForm}>Avbryt</Button>
      
 
