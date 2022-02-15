@@ -92,6 +92,8 @@ function CalendarComp() {
 
     const [formState, setFormState] = useState();
 
+    const duplDatesArray = [];
+
 
 
 
@@ -146,19 +148,25 @@ function CalendarComp() {
 
     }
 
-    let arrayOfFourDates = find_duplicate_in_array(arrayOfDates);
+    let arrayOfFourDuplDates = find_duplicate_in_array(arrayOfDates);
 
-    arrayOfFourDates.forEach((theDate)=>{
-
+    arrayOfFourDuplDates.forEach((theDate)=>{
+      duplDatesArray.push(new Date(theDate));
     });
-
+console.log(duplDatesArray);
     }
     
 
   
     return (
       <div>
-        <Calendar onChange={onChange} onClickDay={openForm} minDate={new Date()}  value={value}  tileDisabled={({activeStartDate, date, view }) => date.getDay() === 0}/>
+        <Calendar onChange={onChange} onClickDay={openForm} minDate={new Date()}  value={value} tileDisabled={({date, view}) =>
+                    (view === 'month') && // Block day tiles only
+                    duplDatesArray.some(disabledDate =>
+                      date.getFullYear() === disabledDate.getFullYear() &&
+                      date.getMonth() === disabledDate.getMonth() &&
+                      date.getDate() === disabledDate.getDate()
+                    )} />
 
         {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={addToDb} />}
 
