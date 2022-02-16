@@ -162,9 +162,7 @@ function CalendarComp() {
     
 
     useEffect(() => {
-      
       checkIfDateFull();
-      
     }, []);
 
       
