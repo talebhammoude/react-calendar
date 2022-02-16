@@ -92,8 +92,9 @@ function CalendarComp() {
 
     const [formState, setFormState] = useState();
 
-    const duplDatesArray = [];
+    const [duplDatesArray, setDuplDatesArray] = useState([]);
 
+    // const duplDatesArray = [];
 
 
 
@@ -112,9 +113,7 @@ function CalendarComp() {
 
 
 
-    useEffect(() => {
-      checkIfDateFull();
-    });
+   
 
 
     const checkIfDateFull = async() => {
@@ -149,28 +148,53 @@ function CalendarComp() {
     }
 
     let arrayOfFourDuplDates = find_duplicate_in_array(arrayOfDates);
+    console.log(arrayOfFourDuplDates);
 
     arrayOfFourDuplDates.forEach((theDate)=>{
-      duplDatesArray.push(new Date(theDate));
+      //duplDatesArray.push(new Date(theDate));
+
+      //setDuplDatesArray([...duplDatesArray, new Date(theDate) ]);
+      setDuplDatesArray(prev => [...prev, new Date(theDate)]);
     });
-console.log(duplDatesArray);
+
+    console.log(duplDatesArray);
     }
     
 
+    useEffect(() => {
+      
+      checkIfDateFull();
+      
+    }, []);
+
+      
+      
+
+    
+    
+   
   
     return (
+
+      
+
       <div>
-        <Calendar onChange={onChange} onClickDay={openForm} minDate={new Date()}  value={value} tileDisabled={({date, view}) =>
+       {duplDatesArray && <Calendar onChange={onChange} onClickDay={openForm} minDate={new Date()}  value={value} tileDisabled={({date, view}) =>
                     (view === 'month') && // Block day tiles only
                     duplDatesArray.some(disabledDate =>
                       date.getFullYear() === disabledDate.getFullYear() &&
                       date.getMonth() === disabledDate.getMonth() &&
                       date.getDate() === disabledDate.getDate()
-                    )} />
+                    )} />  }
+        
 
         {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={addToDb} />}
+                    
 
       </div>
+
+
+     
     );
   }
 

@@ -111,7 +111,7 @@ function Exampleform(props) {
       </Row> */}
 
       
-      <Button  className='btn-primary'   type="submit" onClick={props.addBooking} >Skicka iväg förfrågan</Button>
+      <Button  className='btn-primary'   type="submit"  >Skicka iväg förfrågan</Button>
       <Button className='btn-primary' onClick={props.cancelForm}>Avbryt</Button>
      
 
