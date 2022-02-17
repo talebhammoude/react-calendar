@@ -94,6 +94,7 @@ function CalendarComp() {
 
     const [duplDatesArray, setDuplDatesArray] = useState([]);
 
+    
     // const duplDatesArray = [];
 
 
@@ -161,8 +162,10 @@ function CalendarComp() {
     }
     
 
+    // useEffect för att kunna köra functionen bara en gång. Bara "[]" som dependency för att köra useEffect:en en gång också "eslint-disable line" kommentaren för att ignorera eslint error.
     useEffect(() => {
       checkIfDateFull();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
       
