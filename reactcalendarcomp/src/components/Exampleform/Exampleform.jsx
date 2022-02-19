@@ -4,6 +4,12 @@ import "./Exampleform.css";
 // import React, { useState } from 'react';
 
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 
 
 function Exampleform(props) {
@@ -13,7 +19,9 @@ function Exampleform(props) {
  const handleSubmit = e => {
     fetch("/", {
       method: "post",
-      name: "contact"
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact"})
+      
       
     })
       .then(() => {
