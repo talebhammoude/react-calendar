@@ -4,34 +4,11 @@ import "./Exampleform.css";
 // import React, { useState } from 'react';
 
 
-const encode = (data) => {
-  return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-}
-
 
 
 function Exampleform(props) {
   
   
-
- const handleSubmit = e => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "name": "contact"})
-      
-      
-    })
-      .then(() => {
-        //props.addBooking();
-        console.log("Success!");
-      })
-      .catch(error => alert(error));
-
-    e.preventDefault();
-  };
 
   
 
@@ -44,7 +21,7 @@ function Exampleform(props) {
 
 
       
-      <Form  onSubmit={handleSubmit}  >
+      <Form  name="contact" method="post" onSubmit={props.addBooking}  >
       <input type="hidden" name="form-name" value="contact"  />
 
       <Row className="mb-4">
