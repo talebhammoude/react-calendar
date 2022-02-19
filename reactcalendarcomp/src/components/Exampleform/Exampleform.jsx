@@ -1,44 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form , Button, Row, Col} from "react-bootstrap";
 import "./Exampleform.css";
-import React, { useState } from 'react';
-
-
-
-
-const encode = (data) => {
-  return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-}
-
+// import React, { useState } from 'react';
 
 
 
 
 function Exampleform(props) {
   
-
-  const [body , setBody]= useState({ firstname: "", lastname: "", email: "", date:"", time:"", descr:"" });
-
-
-  const handleSubmit = e => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...body })
-    })
-      .then(() => {
-        console.log("Success!");
-      })
-      .catch(error => console.log(error));
   
-    e.preventDefault();
-  };
+
   
-  const handleChange = e => setBody({ [e.target.name]: e.target.value });
-  
-  const { firstname, lastname, email, time,  } = body;
 
 
   return (
@@ -48,11 +20,9 @@ function Exampleform(props) {
       <div className='form-dialog'>
 
 
-     
-
       
-      <Form   onSubmit={handleSubmit}  >
-      {/* <input type="hidden" name="form-name" value="contact"  /> */}
+      <Form  name="contact" method="post" onSubmit={props.addBooking}  >
+      <input type="hidden" name="form-name" value="contact"  />
 
       <Row className="mb-4">
         <h2>Skicka en förfrågan</h2>
@@ -69,8 +39,6 @@ function Exampleform(props) {
             placeholder="..."
             defaultValue=""
             name="Förnamn:"
-            value={firstname}
-            onChange={handleChange}
           />
           <Form.Control.Feedback></Form.Control.Feedback>
         </Form.Group>
@@ -82,15 +50,14 @@ function Exampleform(props) {
             placeholder="..."
             defaultValue=""
             name="Efternamn:"
-            value={lastname}
-            onChange={handleChange}
+            
           />
           <Form.Control.Feedback></Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group as={Col} md="6" >
           <Form.Label>E-post</Form.Label>
-          <Form.Control type="email" placeholder="namn@exempel.com" required name="E-post:" value={email} onChange={handleChange}/>
+          <Form.Control type="email" placeholder="namn@exempel.com" required name="E-post:"/>
           <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
         </Form.Group>
        
@@ -102,11 +69,11 @@ function Exampleform(props) {
       <Row className="mb-3">
         <Form.Group as={Col} md="6" >
           <Form.Label >Önskad datum</Form.Label>
-          <Form.Control  type="text"   required value={props.dayValue} readOnly  name="Datum:"   onChange={handleChange}/>
+          <Form.Control  type="text"   required value={props.dayValue} readOnly  name="Datum:"  />
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>Välj önskad tid</Form.Label>
-          <Form.Select name="Tid:" value={time} onChange={handleChange} >
+          <Form.Select name="Tid:" >
             <option id="no-options" value="no-value"></option>
             <option id="12:00 - 13:00" value="12:00 - 13:00">12:00 - 13:00</option>
             <option id="13:10 - 14:10" value="13:10 - 14:10">13:10 - 14:10</option>
@@ -124,7 +91,7 @@ function Exampleform(props) {
       <Row className="mb-2">
         <Form.Group className="mb-1"  >
         <Form.Label>Beskriv ditt fall</Form.Label>
-        <Form.Control id="description1" as="textarea" rows={2} name="Beskrivning:" onChange={handleChange} required/>
+        <Form.Control id="description1" as="textarea" rows={2} name="Beskrivning:"  required/>
         </Form.Group>
       </Row>
 
