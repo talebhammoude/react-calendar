@@ -50,10 +50,6 @@ async function addToDb() {
       console.error("Error adding document: ", e);
     }
 
-setTimeout(()=>{
-  console.log("Data fetch done!")
-},5000);
-
 }
 
 

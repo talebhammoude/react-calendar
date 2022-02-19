@@ -10,6 +10,21 @@ function Exampleform(props) {
   
   
 
+ const handleSubmit = e => {
+    fetch("/", {
+      method: "post",
+      name: "contact"
+      
+    })
+      .then(() => {
+        props.addBooking();
+        console.log("Success!");
+      })
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
+
   
 
 
@@ -21,7 +36,7 @@ function Exampleform(props) {
 
 
       
-      <Form  name="contact" method="post" onSubmit={props.addBooking}  >
+      <Form  onSubmit={handleSubmit}  >
       <input type="hidden" name="form-name" value="contact"  />
 
       <Row className="mb-4">
