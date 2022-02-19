@@ -33,7 +33,7 @@ const db = getFirestore();
 
 
 
-async function addToDb(e) {
+async function addToDb(event) {
 
   
     try {
@@ -50,7 +50,7 @@ async function addToDb(e) {
     } catch (e) {
       console.error("Error adding document: ", e);
     }
-    e.preventDefault();
+    event.preventDefault();
 }
 
 
