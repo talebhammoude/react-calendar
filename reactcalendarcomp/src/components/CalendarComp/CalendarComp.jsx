@@ -74,7 +74,6 @@ async function checkIfAvailable () {
     timeOptionsArr.forEach((e)=>{
       if(dataToArray.includes(e.value)) {
         
-     
        document.getElementById("validationCustom04").options.namedItem(`${e.value}`).disabled = true;
       }
     });

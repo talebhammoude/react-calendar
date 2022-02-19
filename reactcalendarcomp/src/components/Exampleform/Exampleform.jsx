@@ -38,7 +38,7 @@ function Exampleform(props) {
   
   const handleChange = e => setBody({ [e.target.name]: e.target.value });
   
-  const { firstname, lastname, email, time, descr } = body;
+  const { firstname, lastname, email, time,  } = body;
 
 
   return (
@@ -124,7 +124,7 @@ function Exampleform(props) {
       <Row className="mb-2">
         <Form.Group className="mb-1"  >
         <Form.Label>Beskriv ditt fall</Form.Label>
-        <Form.Control id="description1" as="textarea" rows={2} name="Beskrivning:" value={descr} onChange={handleChange} required/>
+        <Form.Control id="description1" as="textarea" rows={2} name="Beskrivning:" onChange={handleChange} required/>
         </Form.Group>
       </Row>
 
