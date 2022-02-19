@@ -32,6 +32,7 @@ const db = getFirestore();
 
 
 
+
 async function addToDb() {
 
     try {
@@ -48,6 +49,11 @@ async function addToDb() {
     } catch (e) {
       console.error("Error adding document: ", e);
     }
+
+setTimeout(()=>{
+  console.log("Data fetch done!")
+},5000);
+
 }
 
 
