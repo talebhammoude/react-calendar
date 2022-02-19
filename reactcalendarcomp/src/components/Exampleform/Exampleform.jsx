@@ -11,6 +11,7 @@ function Exampleform(props) {
   
 
   const handleSubmit = e => {
+    e.preventDefault();
     fetch("/", {
       method: "post",
       name: "contact"
