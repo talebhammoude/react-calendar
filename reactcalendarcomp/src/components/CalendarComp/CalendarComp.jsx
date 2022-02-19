@@ -35,7 +35,7 @@ const db = getFirestore();
 
 async function addToDb(e) {
 
-  e.preventDefault();
+  
     try {
       const docRef = await addDoc(collection(db, "bookedTimes"), {
         firstname: document.querySelector("input[name='Förnamn:']").value,
@@ -50,7 +50,7 @@ async function addToDb(e) {
     } catch (e) {
       console.error("Error adding document: ", e);
     }
-
+    e.preventDefault();
 }
 
 
