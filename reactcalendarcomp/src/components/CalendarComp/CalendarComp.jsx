@@ -33,10 +33,10 @@ const db = getFirestore();
 
 
 
-async function addToDb() {
+ function addToDb() {
 
     try {
-      const docRef = await addDoc(collection(db, "bookedTimes"), {
+      const docRef =  addDoc(collection(db, "bookedTimes"), {
         firstname: document.querySelector("input[name='Förnamn:']").value,
         lastname: document.querySelector("input[name='Efternamn:']").value,
         email: document.querySelector("input[name='E-post:']").value,
