@@ -12,7 +12,7 @@ function Exampleform(props) {
 
   const handleSubmit = e => {
     fetch("/", {
-      method: "post",
+      method: "POST",
       name: "contact"
       
     })
