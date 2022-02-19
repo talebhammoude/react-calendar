@@ -17,7 +17,7 @@ function Exampleform(props) {
       
     })
       .then(() => {
-        props.addBooking();
+        //props.addBooking();
         console.log("Success!");
       })
       .catch(error => alert(error));
