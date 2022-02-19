@@ -23,7 +23,7 @@ const handleSubmit = e => {
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encode({ "form-name": "contact", ...body })
+    body: encode({ "name": "contact", ...body })
   })
     .then(() => {
       console.log("Success!");
