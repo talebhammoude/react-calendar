@@ -94,6 +94,9 @@ function CalendarComp() {
 
     const [duplDatesArray, setDuplDatesArray] = useState([]);
 
+    //För att se till så att datan är full innan den renderar ut det i kalendern. 
+    const [duplDatesArrayComplete , setDuplDatesArrayComplete] = useState(false)
+
     
     // const duplDatesArray = [];
 
@@ -158,6 +161,7 @@ function CalendarComp() {
       setDuplDatesArray(prev => [...prev, new Date(theDate)]);
     });
 
+    setDuplDatesArrayComplete(true);
     console.log(duplDatesArray);
     }
     
@@ -180,7 +184,7 @@ function CalendarComp() {
       
 
       <div>
-       {duplDatesArray && <Calendar onChange={onChange} onClickDay={openForm} minDate={new Date()}  value={value} tileDisabled={({date, view}) =>
+       {duplDatesArray && duplDatesArrayComplete ===true && <Calendar onChange={onChange} onClickDay={openForm} minDate={new Date()}  value={value} tileDisabled={({date, view}) =>
                     (view === 'month') && // Block day tiles only
                     duplDatesArray.some(disabledDate =>
                       date.getFullYear() === disabledDate.getFullYear() &&
