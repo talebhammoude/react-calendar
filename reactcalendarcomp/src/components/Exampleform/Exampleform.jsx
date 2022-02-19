@@ -18,7 +18,7 @@ function Exampleform(props) {
 
  const handleSubmit = e => {
     fetch("/", {
-      method: "post",
+      method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact"})
       
