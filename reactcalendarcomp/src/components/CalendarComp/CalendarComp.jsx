@@ -32,8 +32,11 @@ const db = getFirestore();
 
 
 
+function handlingSubmitAddToDb() {
 
-async function addToDb(event) {
+  addToDb();
+
+async function addToDb() {
 
   
     try {
@@ -48,9 +51,12 @@ async function addToDb(event) {
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-      console.error("Error adding document: ", e);
+      console.error("Error adding document: " , e);
+      
     }
-    event.preventDefault();
+    
+}
+
 }
 
 
@@ -195,7 +201,7 @@ function CalendarComp() {
                     )} />  }
         
 
-        {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={addToDb} />}
+        {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={handlingSubmitAddToDb} />}
                     
 
       </div>
