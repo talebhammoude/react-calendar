@@ -32,12 +32,8 @@ const db = getFirestore();
 
 
 
-function handlingSubmitAddToDb() {
-
-  addToDb();
 
 async function addToDb() {
-
   
     try {
       const docRef = await addDoc(collection(db, "bookedTimes"), {
@@ -57,7 +53,6 @@ async function addToDb() {
     
 }
 
-}
 
 
 
@@ -201,7 +196,7 @@ function CalendarComp() {
                     )} />  }
         
 
-        {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={handlingSubmitAddToDb} />}
+        {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={addToDb} />}
                     
 
       </div>
