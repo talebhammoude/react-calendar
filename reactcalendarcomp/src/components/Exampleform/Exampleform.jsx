@@ -33,14 +33,14 @@ const encode = (data) => {
 
 const handleSubmit = e => {
   // setIsSubmitted(true)
-
+    props.addBooking();
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact-form", ...formData })
     })
     .then(() => console.log("Success!"))
-    .then(() => props.addBooking())
+    //.then(() => props.addBooking())
     .catch(error => console.log(error));
 
   e.preventDefault();
