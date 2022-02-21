@@ -53,10 +53,10 @@ const handleChange = e => {
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
               body: encode({ "form-name": "contact-form", ...formData })
           })
-          .then(() => alert("Success!"))
+          .then(() => console.log("Success!"))
           .then(() => setIsSubmitted(false))
          // .then(() => setFormData({name: "", email: "",  message: ""}))
-          .catch(error => alert(error))
+          .catch(error => console.log(error))
       }
   }, [formData, isSubmitted])
 
