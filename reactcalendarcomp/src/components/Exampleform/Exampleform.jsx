@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form , Button, Row, Col} from "react-bootstrap";
 import "./Exampleform.css";
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
 
 
@@ -20,11 +20,22 @@ function Exampleform(props) {
 });
 
 
-const [isSubmitted, setIsSubmitted] = useState(false);
+//const [isSubmitted, setIsSubmitted] = useState(false);
 
 
 const handleSubmit = e => {
-  setIsSubmitted(true)
+  // setIsSubmitted(true)
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact-form", ...formData })
+    })
+    .then(() => console.log("Success!"))
+   // .then(() => setIsSubmitted(false))
+    // .then(() => setFormData({name: "", email: "",  message: ""}))
+    .catch(error => console.log(error));
+
   e.preventDefault();
   }
 
@@ -45,20 +56,12 @@ const handleChange = e => {
 
 
 
-    useEffect(() => {
-      if(isSubmitted){
+  //   useEffect(() => {
+  //     if(isSubmitted){
 
-          fetch("/", {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: encode({ "form-name": "contact-form", ...formData })
-          })
-          .then(() => console.log("Success!"))
-          .then(() => setIsSubmitted(false))
-         // .then(() => setFormData({name: "", email: "",  message: ""}))
-          .catch(error => console.log(error))
-      }
-  }, [formData, isSubmitted])
+
+  //     }
+  // }, [formData, isSubmitted])
 
     
   
