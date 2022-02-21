@@ -33,61 +33,6 @@ const db = getFirestore();
 
 
 
-async function addToDb() {
-  
-    try {
-      const docRef = await addDoc(collection(db, "bookedTimes"), {
-        firstname: document.querySelector("input[name='Förnamn:']").value,
-        lastname: document.querySelector("input[name='Efternamn:']").value,
-        email: document.querySelector("input[name='E-post:']").value,
-        date: document.querySelector("input[name='Datum:']").value,
-        time: document.querySelector("#validationCustom04").value,
-        description: document.querySelector("#description1").value,
-        
-      });
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: " , e);
-      
-    }
-    
-}
-
-
-
-
-
-async function checkIfAvailable () {
-
-
-  const querySnapshot = await getDocs(collection(db, "bookedTimes"));
-  querySnapshot.forEach((doc) => {
-
-  const dataToArray = Object.values(doc.data());
-  console.log(dataToArray);
-
-  
-  let timeOptionsArr = document.querySelectorAll("option");
-  const dateValue = document.querySelector("input[name='Datum:']").value;
-
-  
-  
-  if(dataToArray.includes(dateValue)) {
-    timeOptionsArr.forEach((e)=>{
-      if(dataToArray.includes(e.value)) {
-        
-       document.getElementById("validationCustom04").options.namedItem(`${e.value}`).disabled = true;
-      }
-    });
-  
-  }
-  
-});
-}
-
-
-
-
 
 
 function CalendarComp() {
@@ -102,6 +47,64 @@ function CalendarComp() {
 
     
     // const duplDatesArray = [];
+
+
+
+    
+async function addToDb() {
+  
+  try {
+    const docRef = await addDoc(collection(db, "bookedTimes"), {
+      firstname: document.querySelector("input[name='firstname']").value,
+      lastname: document.querySelector("input[name='lastname']").value,
+      email: document.querySelector("input[name='email']").value,
+      date: document.querySelector("input[name='date']").value,
+      time: document.querySelector("#validationCustom04").value,
+      description: document.querySelector("#description1").value,
+      
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: " , e);
+    
+  }
+  
+}
+
+
+
+
+
+async function checkIfAvailable () {
+
+
+const querySnapshot = await getDocs(collection(db, "bookedTimes"));
+querySnapshot.forEach((doc) => {
+
+const dataToArray = Object.values(doc.data());
+console.log(dataToArray);
+
+
+let timeOptionsArr = document.querySelectorAll("option");
+const dateValue = document.querySelector("input[name='date']").value;
+
+
+
+if(dataToArray.includes(dateValue)) {
+  timeOptionsArr.forEach((e)=>{
+    if(dataToArray.includes(e.value)) {
+      
+     document.getElementById("validationCustom04").options.namedItem(`${e.value}`).disabled = true;
+    }
+  });
+
+}
+
+});
+}
+
+
+
 
 
 

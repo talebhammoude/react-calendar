@@ -23,6 +23,14 @@ function Exampleform(props) {
 //const [isSubmitted, setIsSubmitted] = useState(false);
 
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
+
+
 const handleSubmit = e => {
   // setIsSubmitted(true)
 
@@ -40,19 +48,15 @@ const handleSubmit = e => {
   }
 
 
-const handleChange = e => {
-  const { name, value } = e.target
-  setFormData({...formData, 
-            [name]: value
-        })
-    }
+  const handleChange = e => {
+    const { name, value } = e.target
+    setFormData({
+        ...formData, 
+        [name]: value
+    })
+    console.log(formData)
+}
 
-
-    const encode = (data) => {
-      return Object.keys(data)
-          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-          .join("&");
-    }
 
 
 
@@ -91,8 +95,8 @@ const handleChange = e => {
             required
             type="text"
             placeholder="..."
-            defaultValue=""
-            name="Förnamn:"
+      
+            name="firstname"
             value={formData.firstname} 
             onChange={handleChange}
           />
@@ -104,8 +108,8 @@ const handleChange = e => {
             required
             type="text"
             placeholder="..."
-            defaultValue=""
-            name="Efternamn:"
+            
+            name="lastname"
             value={formData.lastname} 
             onChange={handleChange}
           />
@@ -114,7 +118,7 @@ const handleChange = e => {
 
         <Form.Group as={Col} md="6" >
           <Form.Label>E-post</Form.Label>
-          <Form.Control type="email" placeholder="namn@exempel.com" required name="E-post:" value={formData.email}  onChange={handleChange}/>
+          <Form.Control type="email" placeholder="namn@exempel.com" required name="email" value={formData.email}  onChange={handleChange}/>
           <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
         </Form.Group>
        
@@ -126,11 +130,11 @@ const handleChange = e => {
       <Row className="mb-3">
         <Form.Group as={Col} md="6" >
           <Form.Label >Önskad datum</Form.Label>
-          <Form.Control  type="text"   required value={formData.date}  readOnly  name="Datum:" onChange={handleChange} />
+          <Form.Control  type="text"   required    value={formData.date}  readOnly  name="date" onChange={handleChange} />
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>Välj önskad tid</Form.Label>
-          <Form.Select name="Tid:" value={formData.time}  onChange={handleChange}>
+          <Form.Select name="time" value={formData.time}  onChange={handleChange}>
             <option id="no-options" value="no-value"></option>
             <option id="12:00 - 13:00" value="12:00 - 13:00">12:00 - 13:00</option>
             <option id="13:10 - 14:10" value="13:10 - 14:10">13:10 - 14:10</option>
@@ -148,7 +152,7 @@ const handleChange = e => {
       <Row className="mb-2">
         <Form.Group className="mb-1"  >
         <Form.Label>Beskriv ditt fall</Form.Label>
-        <Form.Control id="description1" as="textarea" rows={2} name="Beskrivning:" value={formData.descr}   required onChange={handleChange}/>
+        <Form.Control id="description1" as="textarea" rows={2} name="descr" value={formData.descr}   required onChange={handleChange}/>
         </Form.Group>
       </Row>
 
