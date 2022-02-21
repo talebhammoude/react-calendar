@@ -46,7 +46,7 @@ const handleChange = e => {
 
 
     useEffect(() => {
-      if(Object.keys(isSubmitted)){
+      if(isSubmitted){
 
           fetch("/", {
               method: "POST",
