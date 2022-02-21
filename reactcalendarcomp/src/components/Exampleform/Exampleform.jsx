@@ -40,8 +40,7 @@ const handleSubmit = e => {
         body: encode({ "form-name": "contact-form", ...formData })
     })
     .then(() => console.log("Success!"))
-   // .then(() => setIsSubmitted(false))
-    // .then(() => setFormData({name: "", email: "",  message: ""}))
+    .then(() => props.addBooking())
     .catch(error => console.log(error));
 
   e.preventDefault();
