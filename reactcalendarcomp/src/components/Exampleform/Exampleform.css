@@ -61,3 +61,8 @@
     border-color: #cc8d91;
 }
 
+
+option:disabled {
+  background: #e9ecef;
+
+}
