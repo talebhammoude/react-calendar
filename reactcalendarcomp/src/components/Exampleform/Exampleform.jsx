@@ -20,7 +20,7 @@ function Exampleform(props) {
 });
 
 
-//const [isSubmitted, setIsSubmitted] = useState(false);
+
 
 
 const encode = (data) => {
@@ -32,10 +32,7 @@ const encode = (data) => {
 
 
 const handleSubmit = e => {
-  // setIsSubmitted(true)
     props.addBooking();
-
-   
 
       fetch("/", {
         method: "POST",
@@ -43,7 +40,7 @@ const handleSubmit = e => {
         body: encode({ "form-name": "contact-form", ...formData })
     })
     .then(() => console.log("Success!"))
-    //.then(() => props.addBooking())
+    
     .catch(error => console.log(error));
 
   e.preventDefault();
@@ -56,20 +53,9 @@ const handleSubmit = e => {
         ...formData, 
         [name]: value
     })
-    console.log(formData)
 }
 
 
-
-
-  //   useEffect(() => {
-  //     if(isSubmitted){
-
-
-  //     }
-  // }, [formData, isSubmitted])
-
-    
   
 
 
@@ -82,7 +68,7 @@ const handleSubmit = e => {
 
       
       <Form  onSubmit={handleSubmit}  >
-      {/* <input type="hidden" name="form-name" value="contact"  /> */}
+      
 
       <Row className="mb-4">
         <h2>Skicka en förfrågan</h2>
