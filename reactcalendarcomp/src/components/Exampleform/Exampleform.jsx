@@ -132,7 +132,7 @@ const handleSubmit = e => {
       <Row className="mb-3">
         <Form.Group as={Col} md="6" >
           <Form.Label >Önskad datum</Form.Label>
-          <Form.Control  type="text"   required    value={props.dayValue}  readOnly  name="date" onChange={handleChange} />
+          <Form.Control  type="text"   required    value={formData.date}  readOnly  name="date" onChange={handleChange} />
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>Välj önskad tid</Form.Label>

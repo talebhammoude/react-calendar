@@ -36,6 +36,10 @@ const db = getFirestore();
 
 
 function CalendarComp() {
+
+
+    
+
     const [value, onChange] = useState(new Date());
 
     const [formState, setFormState] = useState();
@@ -110,6 +114,8 @@ if(dataToArray.includes(dateValue)) {
 
 
     const openForm = () => {
+
+     
       setFormState("open");
       
       checkIfAvailable();
@@ -190,7 +196,20 @@ if(dataToArray.includes(dateValue)) {
       
 
       <div>
-       {duplDatesArray && duplDatesArrayComplete ===true && <Calendar onChange={onChange} onClickDay={openForm} minDate={new Date()}  value={value} tileDisabled={({date, view}) =>
+       {duplDatesArray && duplDatesArrayComplete ===true && <Calendar 
+
+       onChange={onChange} 
+
+       onClickDay={(value) => {
+         onChange(value);
+         openForm();
+        }} 
+
+       minDate={new Date()}  
+
+       value={value} 
+       
+       tileDisabled={({date, view}) =>
                     (view === 'month') && // Block day tiles only
                     duplDatesArray.some(disabledDate =>
                       date.getFullYear() === disabledDate.getFullYear() &&
