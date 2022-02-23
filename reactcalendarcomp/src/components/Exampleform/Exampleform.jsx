@@ -39,7 +39,7 @@ const handleSubmit = e => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact-form", ...formData })
     })
-    .then(() => console.log("Success!"))
+    .then(() => props.showSubmission())
     
     .catch(error => console.log(error));
 
