@@ -6,7 +6,7 @@ import './CalendarComp.css';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
-import Submissioncomp from '../Submissioncomp/Submissioncomp';
+
 
 //import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -49,9 +49,6 @@ function CalendarComp() {
     //Används för att se till så att datan är fullständig innan den renderar ut det i kalendern. Den är satt till false i början.
     const [duplDatesArrayComplete , setDuplDatesArrayComplete] = useState(false)
 
-
-    // //State för att kunna visa/Dölja Submissionsidan. När submissionState=null då är den stängd, när den har värde så syns den.
-    const [ submissionState, setSubmissionState] = useState()
   
 
     //Funktion för att skriva till databasen.
@@ -195,10 +192,12 @@ if(dataToArray.includes(dateValue)) {
 
 
 
-    const handleSubmission = () => {
-      setFormState(null);
+    const success = () => {
+      cancelFormFunc();
 
-      setSubmissionState("Just a value to show submission");
+      document.querySelector(".kalendertext").innerHTML = "Thank you for your booking!";
+      document.querySelector(".kalendertext").style = "color: green";
+
 
     }
 
@@ -234,10 +233,10 @@ if(dataToArray.includes(dateValue)) {
                     )} />  }
         
 
-        {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={addToDb}  showSubmission={handleSubmission} />}
+        {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={addToDb}  showSuccess={success} />}
                     
 
-        {submissionState && <Submissioncomp />}
+      
 
 
       </div>
