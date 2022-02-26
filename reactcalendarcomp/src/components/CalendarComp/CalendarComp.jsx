@@ -22,10 +22,10 @@ const firebaseApp = initializeApp({
 });
 
 //Har denna bara för att det inte dyker upp som ESLint varning så Netlify kan deploya.
-console.log(firebaseApp);
+//console.log(firebaseApp);
 
 
-const db = getFirestore();
+const db = getFirestore(firebaseApp);
 
 
 
@@ -233,7 +233,7 @@ if(dataToArray.includes(dateValue)) {
                     )} />  }
         
 
-        {formState && <Exampleform dayValue={value.toLocaleDateString()} cancelForm={cancelFormFunc}  addBooking={addToDb}  showSuccess={success} />}
+        {formState && <Exampleform dayValue={value.toLocaleDateString("sv-SE")} cancelForm={cancelFormFunc}  addBooking={addToDb}  showSuccess={success} />}
                     
 
       
