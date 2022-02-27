@@ -122,8 +122,8 @@ const handleSubmit = e => {
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>Välj önskad tid</Form.Label>
-          <Form.Select name="time" value={formData.time}  onChange={handleChange}>
-            <option id="no-options" value="no-value"></option>
+          <Form.Select name="time" value={formData.time}  required onChange={handleChange}>
+            <option id="no-options" value=""></option>
             <option id="12:00 - 13:00" value="12:00 - 13:00">12:00 - 13:00</option>
             <option id="13:10 - 14:10" value="13:10 - 14:10">13:10 - 14:10</option>
             <option id="14:20 - 15:20" value="14:20 - 15:20">14:20 - 15:20</option>
