@@ -1,4 +1,4 @@
-# Booking system using react-calendar
+# React Booking System.
 (with Firebase)
 
 
