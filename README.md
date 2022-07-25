@@ -1,4 +1,4 @@
-# React Booking System.
+# React Booking System
 (with Firebase)
 
 
